@@ -1,58 +1,62 @@
 # Swag Function
 
-The `swag` function is designed to perform sliding window aggregation efficiently. It is useful for solving problems that require frequent and efficient computation over a sliding window of elements.
+
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [Function Definition](#function-definition)
-3. [Usage](#usage)
-4. [Example](#example)
-5. [Complexity](#complexity)
-6. [Contributing](#contributing)
-7. [License](#license)
+1. [Introduction介绍](#introduction)
+2. [Function Definition函数定义](#function-definition)
+
 
 ## Introduction
 
-The sliding window aggregation (SWAG) technique is particularly useful for maintaining a running summary of data as it flows in, especially when working with large datasets. The `swag` function provides a way to compute aggregates like sum, minimum, maximum, or any other associative operation over a sliding window.
+函数std :: swap（）是C ++标准模板库（STL）中的内置函数，该函数交换两个变量的值。
 
 ## Function Definition
 
 Here's a typical definition of the `swag` function in C++:
 
 ```cpp
-#include <deque>
-#include <functional>
-#include <vector>
 
-template<typename T, typename F>
-class Swag {
-public:
-    Swag(F func) : func(func) {}
-
-    void push(const T& value) {
-        T aggregated_value = buffer.empty() ? value : func(buffer.back().second, value);
-        buffer.emplace_back(value, aggregated_value);
-    }
-
-    void pop() {
-        if (!buffer.empty()) {
-            buffer.pop_front();
-        }
-    }
-
-    T query() const {
-        if (buffer.empty()) {
-            throw std::runtime_error("Query on empty buffer");
-        }
-        return buffer.front().second;
-    }
-
-    bool empty() const {
-        return buffer.empty();
-    }
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+int main()
+ 
+{
+ 
+    int a = aaa;
+ 
+    int b = bbb;
+ 
+    cout << "Value of a before: "<< a << endl;
+ 
+    cout << "Value of b before: "<< b << endl;
+ 
+    // swap values of the variables
+ 
+    swap(a, b);
+ 
+    cout << "Value of a now: "<< a << endl;
+ 
+    cout << "Value of b now: "<< b << endl;
+ 
+    return 0;
+ 
 
 private:
     F func;
     std::deque<std::pair<T, T>> buffer;
 };
+
+```
+输出：
+
+Value of a before: aaa
+
+Value of b before: bbb
+
+Value of a now: bbb
+
+Value of b now: aaa
