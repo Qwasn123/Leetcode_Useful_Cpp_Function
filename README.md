@@ -8,3 +8,4 @@ This repository contains a collection of useful C++ functions that are commonly 
 When solving algorithmic problems on LeetCode, there are certain utility functions that come in handy repeatedly. This repository provides implementations of such functions in C++, allowing users to focus more on solving the core problems rather than re-implementing common utilities.
 
 ## Functions List
++ swag(a,b)
